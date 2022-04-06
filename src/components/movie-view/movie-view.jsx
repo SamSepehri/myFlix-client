@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import './movie-view.scss';
+
 
 export class MovieView extends React.Component {
     keypressCallback(event) {
