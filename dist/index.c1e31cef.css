@@ -48,8 +48,48 @@
 * {
   box-sizing: border-box;
   font-family: "League Spartan", sans-serif;
-  background-color: #020402;
+  background-color: #051a05;
   color: #f1fffa;
+}
+:root {
+  --fontsize-navbar-brand: 30px;
+  --fontsize-navbar-link: 20px;
+  --fontweight-navbar-brand: 900;
+  --fontweight-navbar-link: 600;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "League Spartan", sans-serif;
+}
+
+#navbar {
+  background-color: #646262;
+  margin-bottom: 10px;
+  border: 5px;
+  border-color: #f1fffa;
+}
+
+#navbar-container {
+  background-color: #646262;
+  margin: 0;
+}
+
+#navbar-brand {
+  background-color: #646262;
+  font-size: 30px;
+  font-weight: 900;
+}
+
+#nav {
+  background-color: #646262;
+}
+
+#nav-link {
+  background-color: #646262;
+  font-size: 20px;
+  font-weight: 600;
+  color: #020402;
 }
 #main-view {
   margin-top: 100px;
