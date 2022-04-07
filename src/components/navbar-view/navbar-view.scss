@@ -1,0 +1,44 @@
+$backgroundColor: #020402;
+$textColor: #f1fffa;
+$mainColor: #646262;
+
+:root {
+    --fontsize-navbar-brand: 30px;
+    --fontsize-navbar-link: 20px;
+    --fontweight-navbar-brand: 900;
+    --fontweight-navbar-link: 600;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "League Spartan", sans-serif;
+}
+
+#navbar {
+    background-color: $mainColor;
+    margin-bottom: 10px;
+    border: 5px;
+    border-color: $textColor;
+}
+
+#navbar-container {
+    background-color: $mainColor;
+    margin: 0;
+}
+
+#navbar-brand {
+    background-color: $mainColor;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+#nav {
+    background-color: $mainColor;
+}
+
+#nav-link {
+    background-color: $mainColor;
+    font-size: 20px;
+    font-weight: 600;
+    color: $backgroundColor;
+}
