@@ -1,21 +1,40 @@
-.movie-card {
-    width: 350px;
-    height: 20px;
-    padding: 10px;
-    margin-top: 5px;
-    text-align: center;
-    font-weight: bold;
-    background: #e0dede;
-    border-radius: 10px;
-    box-shadow: 5px 20px 30px #000;
-    cursor: pointer;
+$backgroundColor: #020402;
+$textColor: #f1fffa;
+$mainColor: #e5383b;
+
+:root {
+    --fontsize-card-title: 20px;
+    --fontweight-card-title: 600;
+    --fontsize-card-button: 15px;
+    --fontweight-card-button: 400;
 }
 
-.movie-card-titles {
-    font-weight: bold;
-    color: white;
-    font-size: 2.5em;
-    padding-bottom: 30px;
-    justify-content: center;
-    display: flex;
+* {
+    box-sizing: border-box;
+    font-family: "League Spartan", sans-serif;
+    background-color: $backgroundColor;
+    color: $textColor;
+}
+
+#card-button {
+    margin: auto;
+    color: $textColor;
+}
+
+#movie-card {
+    text-align: center;
+    min-height: 500px;
+    margin-bottom: 50px;
+    border-color: $textColor;
+    border-width: 10px;
+}
+
+#card-title {
+    font-size: var(--fontsize-card-title);
+    font-weight: var(--fontweight-card-title);
+}
+
+#card-button {
+    font-size: var(--fontsize-card-button);
+    font-weight: var(--fontweight-card-button);
 }
