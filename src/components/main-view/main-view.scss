@@ -1,0 +1,9 @@
+$backgroundColor: #020402;
+$textColor: #f1fffa;
+
+* {
+    box-sizing: border-box;
+    font-family: "League Spartan", sans-serif;
+    background-color: $backgroundColor;
+    color: $textColor;
+}
