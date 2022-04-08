@@ -14,8 +14,15 @@ export function LoginView(props) {
             Username: username,
             Password: password
         })
+            .then(response => {
+                const data = response.data;
+                //username has been changed to data
+                props.onLoggedIn(data);
+            })
+            .catch(e => {
+                console.log('no such user')
+            });
         // Send a request to the server for authentication, then call props.onLoggedIn(username)
-        props.onLoggedIn(username);
     };
 
 

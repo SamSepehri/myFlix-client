@@ -60,7 +60,7 @@ class MainView extends React.Component {
 
         // if (!register) return <RegistrationView onRegistration={(register) => this.onRegistration(register)} />;
 
-        // if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
+        if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
 
         if (movies.length === 0) return <div className="main-view" />;
         return (
