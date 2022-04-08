@@ -25120,7 +25120,15 @@ class MainView extends _reactDefault.default.Component {
     render() {
         const { movies , selectedMovie , user , register  } = this.state;
         // if (!register) return <RegistrationView onRegistration={(register) => this.onRegistration(register)} />;
-        // if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
+        if (!user) return(/*#__PURE__*/ _jsxRuntime.jsx(_loginView.LoginView, {
+            onLoggedIn: (user1)=>this.onLoggedIn(user1)
+            ,
+            __source: {
+                fileName: "src/components/main-view/main-view.jsx",
+                lineNumber: 63
+            },
+            __self: this
+        }));
         if (movies.length === 0) return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
             className: "main-view",
             __source: {
@@ -39849,14 +39857,19 @@ function LoginView(props) {
         _axiosDefault.default.post('https://cinesam2022.herokuapp.com/login', {
             Username: username,
             Password: password
+        }).then((response)=>{
+            const data = response.data;
+            //username has been changed to data
+            props.onLoggedIn(data);
+        }).catch((e1)=>{
+            console.log('no such user');
         });
-        // Send a request to the server for authentication, then call props.onLoggedIn(username)
-        props.onLoggedIn(username);
+    // Send a request to the server for authentication, then call props.onLoggedIn(username)
     };
     return(/*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default, {
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 23
+            lineNumber: 30
         },
         __self: this,
         children: [
@@ -39864,14 +39877,14 @@ function LoginView(props) {
                 controlId: "formUsername",
                 __source: {
                     fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 24
+                    lineNumber: 31
                 },
                 __self: this,
                 children: [
                     /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
                         __source: {
                             fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 25
+                            lineNumber: 32
                         },
                         __self: this,
                         children: "Username:"
@@ -39882,7 +39895,7 @@ function LoginView(props) {
                         ,
                         __source: {
                             fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 26
+                            lineNumber: 33
                         },
                         __self: this
                     })
@@ -39892,14 +39905,14 @@ function LoginView(props) {
                 controlId: "formPassword",
                 __source: {
                     fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 29
+                    lineNumber: 36
                 },
                 __self: this,
                 children: [
                     /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
                         __source: {
                             fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 30
+                            lineNumber: 37
                         },
                         __self: this,
                         children: "Password:"
@@ -39910,7 +39923,7 @@ function LoginView(props) {
                         ,
                         __source: {
                             fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 31
+                            lineNumber: 38
                         },
                         __self: this
                     })
@@ -39922,7 +39935,7 @@ function LoginView(props) {
                 onClick: handleSubmit,
                 __source: {
                     fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 33
+                    lineNumber: 40
                 },
                 __self: this,
                 children: "Submit"
