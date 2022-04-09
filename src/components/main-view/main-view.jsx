@@ -1,9 +1,9 @@
 // myFlix-client/src/main-view/main-view.jsx
 import React from 'react';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 import { Col, Row, Container } from "react-bootstrap";
 import "./main-view.scss"
-
 import { RegistrationView } from "../registration-view/registration-view";
 import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
@@ -17,8 +17,10 @@ class MainView extends React.Component {
     constructor() {
         super();
         this.state = {
+            // Creating an empty array to hold movie data from database
             movies: [],
             selectedMovie: null,
+            // Set initial user state to null, used for user login --> Default is logged out
             user: null
         };
     }
@@ -39,26 +41,7 @@ class MainView extends React.Component {
             });
     }
 
-    componentDidMount() {
-        axios.get('https://cinesam2022.herokuapp.com/movies')
-            .then(response => {
-                this.setState({
-                    movies: response.data
-                });
-            })
-            .catch(erorr => {
-                console.log(erorr);
-            });
-    }
-
-    // componentWillUnmount(){}
-
-    setSelectedMovie(movie) {
-        this.setState({
-            selectedMovie: movie
-        });
-    }
-
+    /* On successful login, set token and user variables of local State & load the movies list (getMovies) */
     onLoggedIn(authData) {
         console.log(authData);
         this.setState({
@@ -69,11 +52,41 @@ class MainView extends React.Component {
         this.getMovies(authData.token);
     }
 
-    onRegistration(register) {
+    onLoggedout() {
+        localStorage.removeItem('token');
+        localStorage.removeItem('user');
         this.setState({
-            register
+            user: null
         });
     }
+
+    // When token is present (user is logged in), get list of movies
+    componentDidMount() {
+        let accessToken = localStorage.getItem('token');
+        if (accessToken !== null) {
+            this.setState({
+                user: localStorage.getItem('user')
+            });
+            this.getMovies(accessToken);
+        }
+    }
+
+
+    // onRegistration(register) {
+    //     this.setState({
+    //         register
+    //     });
+    // }
+
+
+    // componentWillUnmount(){}
+    setSelectedMovie(movie) {
+        this.setState({
+            selectedMovie: movie
+        });
+    }
+
+
 
     render() {
         const { movies, selectedMovie, user, register } = this.state;

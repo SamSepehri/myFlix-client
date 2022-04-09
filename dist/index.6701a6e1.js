@@ -25076,6 +25076,8 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
 var _reactBootstrap = require("react-bootstrap");
 var _mainViewScss = require("./main-view.scss");
 var _registrationView = require("../registration-view/registration-view");
@@ -25087,8 +25089,10 @@ class MainView extends _reactDefault.default.Component {
     constructor(){
         super();
         this.state = {
+            // Creating an empty array to hold movie data from database
             movies: [],
             selectedMovie: null,
+            // Set initial user state to null, used for user login --> Default is logged out
             user: null
         };
     }
@@ -25107,22 +25111,7 @@ class MainView extends _reactDefault.default.Component {
             console.log(error);
         });
     }
-    componentDidMount() {
-        _axiosDefault.default.get('https://cinesam2022.herokuapp.com/movies').then((response)=>{
-            this.setState({
-                movies: response.data
-            });
-        }).catch((erorr)=>{
-            console.log(erorr);
-        });
-    }
-    // componentWillUnmount(){}
-    setSelectedMovie(movie) {
-        this.setState({
-            selectedMovie: movie
-        });
-    }
-    onLoggedIn(authData) {
+    /* On successful login, set token and user variables of local State & load the movies list (getMovies) */ onLoggedIn(authData) {
         console.log(authData);
         this.setState({
             user: authData.user.Username
@@ -25131,9 +25120,32 @@ class MainView extends _reactDefault.default.Component {
         localStorage.setItem('user', authData.user.Username);
         this.getMovies(authData.token);
     }
-    onRegistration(register) {
+    onLoggedout() {
+        localStorage.removeItem('token');
+        localStorage.removeItem('user');
         this.setState({
-            register
+            user: null
+        });
+    }
+    // When token is present (user is logged in), get list of movies
+    componentDidMount() {
+        let accessToken = localStorage.getItem('token');
+        if (accessToken !== null) {
+            this.setState({
+                user: localStorage.getItem('user')
+            });
+            this.getMovies(accessToken);
+        }
+    }
+    // onRegistration(register) {
+    //     this.setState({
+    //         register
+    //     });
+    // }
+    // componentWillUnmount(){}
+    setSelectedMovie(movie) {
+        this.setState({
+            selectedMovie: movie
         });
     }
     render() {
@@ -25144,7 +25156,7 @@ class MainView extends _reactDefault.default.Component {
             ,
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 83
+                lineNumber: 96
             },
             __self: this
         }));
@@ -25152,28 +25164,28 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 85
+                lineNumber: 98
             },
             __self: this
         }));
         return(/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Container, {
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 87
+                lineNumber: 100
             },
             __self: this,
             children: [
                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 88
+                        lineNumber: 101
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx(_navbarView.NavbarView, {
                         user: user,
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 89
+                            lineNumber: 102
                         },
                         __self: this
                     })
@@ -25182,14 +25194,14 @@ class MainView extends _reactDefault.default.Component {
                     className: "main-view justify-content-md-center",
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 92
+                        lineNumber: 105
                     },
                     __self: this,
                     children: selectedMovie ? /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                         md: 6,
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 95
+                            lineNumber: 108
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsx(_movieView.MovieView, {
@@ -25199,7 +25211,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 96
+                                lineNumber: 109
                             },
                             __self: this
                         })
@@ -25208,7 +25220,7 @@ class MainView extends _reactDefault.default.Component {
                             lg: 4,
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 105
+                                lineNumber: 118
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
@@ -25218,7 +25230,7 @@ class MainView extends _reactDefault.default.Component {
                                 },
                                 __source: {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 106
+                                    lineNumber: 119
                                 },
                                 __self: this
                             }, movie._id)
@@ -25236,7 +25248,7 @@ exports.default = MainView;
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","../movie-card/movie-card":"6EiBJ","../movie-view/movie-view":"ikZdr","@parcel/transformer-js/src/esmodule-helpers.js":"1pvXv","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"a7eaW","axios":"iYoWk","../login-view/login-view":"054li","react-bootstrap":"h2YVd","./main-view.scss":"jyMAr","../registration-view/registration-view":"aP2YV","../navbar-view/navbar-view":"j0Dt2"}],"6EiBJ":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","../movie-card/movie-card":"6EiBJ","../movie-view/movie-view":"ikZdr","@parcel/transformer-js/src/esmodule-helpers.js":"1pvXv","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"a7eaW","axios":"iYoWk","../login-view/login-view":"054li","react-bootstrap":"h2YVd","./main-view.scss":"jyMAr","../registration-view/registration-view":"aP2YV","../navbar-view/navbar-view":"j0Dt2","prop-types":"1tgq3"}],"6EiBJ":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$4249 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
