@@ -1,4 +1,122 @@
 :root {
+  --fontsize-button-text: 15px;
+  --fontweight-button-text: 400;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "League Spartan", sans-serif;
+  background-color: #020402;
+  color: #f1fffa;
+}
+
+#logout-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  color: #f1fffa;
+  background-color: #e5383b;
+  border: none;
+  font-size: var(--fontsize-button-text);
+  font-weight: var(--fontweight-button-text);
+}
+:root {
+  --fontsize-login-card-title: 30px;
+  --fontweight-login-card-title: 600;
+  --fontsize-form-description: 20px;
+  --fontweight-form-description: 400;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "League Spartan", sans-serif;
+}
+
+#registration-form {
+  max-width: 500px;
+}
+
+#registration-form-label {
+  font-size: var(--fontsize-form-description);
+  font-weight: var(--fontweight-form-description);
+  margin-top: 15px;
+  margin-bottom: 0;
+}
+
+#registration-card-title {
+  font-size: var(--fontsize-login-card-title);
+  font-weight: var(--fontweight-login-card-title);
+  text-align: center;
+  color: #e5383b;
+}
+
+#registration-card {
+  border-color: #f1fffa;
+  border-width: 10px;
+  padding: 15px;
+  background-color: #020402;
+}
+
+#register-button {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #f1fffa;
+  background-color: #e5383b;
+  border: none;
+  float: right;
+  margin-top: 25px;
+  font-size: var(--fontsize-form-description);
+  font-weight: var(--fontweight-form-description);
+}
+:root {
+  --fontsize-login-card-title: 30px;
+  --fontweight-login-card-title: 600;
+  --fontsize-form-description: 20px;
+  --fontweight-form-description: 400;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "League Spartan", sans-serif;
+}
+
+#login-form {
+  max-width: 500px;
+}
+
+#login-form-label {
+  font-size: var(--fontsize-form-description);
+  font-weight: var(--fontweight-form-description);
+  margin-top: 15px;
+  margin-bottom: 0;
+}
+
+#login-card-title {
+  font-size: var(--fontsize-login-card-title);
+  font-weight: var(--fontweight-login-card-title);
+  text-align: center;
+  color: #e5383b;
+}
+
+#login-card {
+  border-color: #f1fffa;
+  border-width: 10px;
+  padding: 15px;
+  background-color: #020402;
+}
+
+#login-button {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #f1fffa;
+  background-color: #e5383b;
+  border: none;
+  float: right;
+  margin-top: 25px;
+  font-size: var(--fontsize-form-description);
+  font-weight: var(--fontweight-form-description);
+}
+:root {
   --fontsize-card-title: 20px;
   --fontweight-card-title: 600;
   --fontsize-card-button: 15px;
@@ -82,129 +200,11 @@
   background-color: #e5383b;
   border: none;
 }
-:root {
-  --fontsize-login-card-title: 30px;
-  --fontweight-login-card-title: 600;
-  --fontsize-form-description: 20px;
-  --fontweight-form-description: 400;
-}
-
-* {
-  box-sizing: border-box;
-  font-family: "League Spartan", sans-serif;
-}
-
-#login-form {
-  max-width: 500px;
-}
-
-#login-form-label {
-  font-size: var(--fontsize-form-description);
-  font-weight: var(--fontweight-form-description);
-  margin-top: 15px;
-  margin-bottom: 0;
-}
-
-#login-card-title {
-  font-size: var(--fontsize-login-card-title);
-  font-weight: var(--fontweight-login-card-title);
-  text-align: center;
-  color: #e5383b;
-}
-
-#login-card {
-  border-color: #f1fffa;
-  border-width: 10px;
-  padding: 15px;
-  background-color: #020402;
-}
-
-#login-button {
-  margin-top: 20px;
-  margin-bottom: 10px;
-  color: #f1fffa;
-  background-color: #e5383b;
-  border: none;
-  float: right;
-  margin-top: 25px;
-  font-size: var(--fontsize-form-description);
-  font-weight: var(--fontweight-form-description);
-}
-:root {
-  --fontsize-login-card-title: 30px;
-  --fontweight-login-card-title: 600;
-  --fontsize-form-description: 20px;
-  --fontweight-form-description: 400;
-}
-
-* {
-  box-sizing: border-box;
-  font-family: "League Spartan", sans-serif;
-}
-
-#registration-form {
-  max-width: 500px;
-}
-
-#registration-form-label {
-  font-size: var(--fontsize-form-description);
-  font-weight: var(--fontweight-form-description);
-  margin-top: 15px;
-  margin-bottom: 0;
-}
-
-#registration-card-title {
-  font-size: var(--fontsize-login-card-title);
-  font-weight: var(--fontweight-login-card-title);
-  text-align: center;
-  color: #e5383b;
-}
-
-#registration-card {
-  border-color: #f1fffa;
-  border-width: 10px;
-  padding: 15px;
-  background-color: #020402;
-}
-
-#register-button {
-  margin-top: 20px;
-  margin-bottom: 10px;
-  color: #f1fffa;
-  background-color: #e5383b;
-  border: none;
-  float: right;
-  margin-top: 25px;
-  font-size: var(--fontsize-form-description);
-  font-weight: var(--fontweight-form-description);
-}
 * {
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
   background-color: #353535;
   color: #ffffff;
-}
-:root {
-  --fontsize-button-text: 15px;
-  --fontweight-button-text: 400;
-}
-
-* {
-  box-sizing: border-box;
-  font-family: "League Spartan", sans-serif;
-  background-color: #020402;
-  color: #f1fffa;
-}
-
-#logout-button {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  color: #f1fffa;
-  background-color: #e5383b;
-  border: none;
-  font-size: var(--fontsize-button-text);
-  font-weight: var(--fontweight-button-text);
 }
 
 :root {
@@ -252,4 +252,4 @@
 #main-view {
   margin-top: 100px;
 }
-/*# sourceMappingURL=index.3f764291.css.map */
+/*# sourceMappingURL=index.17d663fa.css.map */

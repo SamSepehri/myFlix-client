@@ -12,7 +12,7 @@ import { DirectorView } from "../director-view/director-view";
 import { ProfileView } from "../profile-view/profile-view";
 import { NavbarView } from "../navbar-view/navbar-view";
 
-export class MainView extends React.Component {
+class MainView extends React.Component {
 
     constructor() {
         super();
@@ -225,3 +225,5 @@ export class MainView extends React.Component {
         );
     }
 }
+
+export default MainView;
