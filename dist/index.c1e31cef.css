@@ -1,55 +1,161 @@
-.movie-view {
-  width: 550px;
-  height: 800px;
-  overflow: hidden;
-  background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
-  border-radius: 10px;
-  box-shadow: 5px 20px 50px #000;
-  color: white;
+:root {
+  --fontsize-movie-title: 30px;
+  --fontweight-movie-title: 600;
+  --fontsize-movie-description: 20px;
+  --fontweight-movie-description: 400;
 }
 
-.movie-title {
-  font-size: 2.3em;
-  justify-content: center;
-  display: flex;
-  margin: 20px;
-  font-weight: bold;
-  padding: 20px;
+* {
+  box-sizing: border-box;
+  font-family: "League Spartan", sans-serif;
+}
+
+#movie-view {
+  border-color: #e5383b;
+  border-width: 10px;
+  min-height: 500px;
+}
+
+#movie-view-image {
+  margin-bottom: 20px;
+}
+
+#movie-title {
   text-align: center;
+  font-size: var(--fontsize-movie-title);
+  font-weight: var(--fontweight-movie-title);
 }
 
-.movie-image {
-  justify-content: center;
-  display: flex;
-  margin-left: 30%;
+#movie-description {
+  font-size: var(--fontsize-movie-description);
+  font-weight: var(--fontweight-movie-description);
+}
+
+#movie-director {
+  font-size: var(--fontsize-movie-description);
+  font-weight: var(--fontweight-movie-description);
+}
+
+#movie-genre {
+  font-size: var(--fontsize-movie-description);
+  font-weight: var(--fontweight-movie-description);
+}
+
+#movie-view-button {
+  margin-top: 20px;
+  margin-bottom: 100px;
+  margin-right: 20px;
+  color: #f1fffa;
+  background-color: #e5383b;
+  border: none;
+}
+:root {
+  --fontsize-login-card-title: 30px;
+  --fontweight-login-card-title: 600;
+  --fontsize-form-description: 20px;
+  --fontweight-form-description: 400;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "League Spartan", sans-serif;
+}
+
+#login-form {
+  max-width: 500px;
+}
+
+#login-form-label {
+  font-size: var(--fontsize-form-description);
+  font-weight: var(--fontweight-form-description);
+  margin-top: 15px;
+  margin-bottom: 0;
+}
+
+#login-card-title {
+  font-size: var(--fontsize-login-card-title);
+  font-weight: var(--fontweight-login-card-title);
   text-align: center;
-  /* padding: 20px; */
-  height: 300px;
-  box-shadow: 5px 20px 50px #000;
+  color: #e5383b;
 }
 
-.movie-description {
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-bottom: 20px;
-  padding-top: 30px;
-  font-size: 1em;
-  line-height: 1.5;
-  justify-content: center;
-  display: flex;
+#login-card {
+  border-color: #f1fffa;
+  border-width: 10px;
+  padding: 15px;
+  background-color: #020402;
 }
 
-.movie-genre {
-  font-weight: bold;
-  padding-top: 0px;
-  padding-left: 30px;
-  padding-bottom: 30px;
+#login-button {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #f1fffa;
+  background-color: #e5383b;
+  border: none;
+  float: right;
+  margin-top: 25px;
+  font-size: var(--fontsize-form-description);
+  font-weight: var(--fontweight-form-description);
 }
 * {
   box-sizing: border-box;
   font-family: "League Spartan", sans-serif;
   background-color: #051a05;
   color: #f1fffa;
+}
+:root {
+  --fontsize-login-card-title: 30px;
+  --fontweight-login-card-title: 600;
+  --fontsize-form-description: 20px;
+  --fontweight-form-description: 400;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "League Spartan", sans-serif;
+}
+
+#registration-form {
+  max-width: 500px;
+}
+
+#registration-form-label {
+  font-size: var(--fontsize-form-description);
+  font-weight: var(--fontweight-form-description);
+  margin-top: 15px;
+  margin-bottom: 0;
+}
+
+#registration-card-title {
+  font-size: var(--fontsize-login-card-title);
+  font-weight: var(--fontweight-login-card-title);
+  text-align: center;
+  color: #e5383b;
+}
+
+#registration-card {
+  border-color: #f1fffa;
+  border-width: 10px;
+  padding: 15px;
+  background-color: #020402;
+}
+
+#register-button {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #f1fffa;
+  background-color: #e5383b;
+  border: none;
+  float: right;
+  margin-top: 25px;
+  font-size: var(--fontsize-form-description);
+  font-weight: var(--fontweight-form-description);
+}
+* {
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  background-color: #353535;
+  color: #ffffff;
 }
 :root {
   --fontsize-navbar-brand: 30px;
@@ -64,32 +170,34 @@
 }
 
 #navbar {
-  background-color: #646262;
+  background-color: #e5383b;
   margin-bottom: 10px;
   border: 5px;
   border-color: #f1fffa;
 }
 
 #navbar-container {
-  background-color: #646262;
+  background-color: #e5383b;
   margin: 0;
 }
 
 #navbar-brand {
-  background-color: #646262;
+  background-color: #e5383b;
+  color: #f1fffa;
   font-size: 30px;
   font-weight: 900;
+  margin-left: 20px;
 }
 
 #nav {
-  background-color: #646262;
+  background-color: #e5383b;
 }
 
 #nav-link {
-  background-color: #646262;
+  background-color: #e5383b;
+  color: #f1fffa;
   font-size: 20px;
   font-weight: 600;
-  color: #020402;
 }
 #main-view {
   margin-top: 100px;

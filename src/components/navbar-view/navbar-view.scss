@@ -1,6 +1,6 @@
 $backgroundColor: #020402;
 $textColor: #f1fffa;
-$mainColor: #646262;
+$mainColor: #e5383b;
 
 :root {
     --fontsize-navbar-brand: 30px;
@@ -28,8 +28,10 @@ $mainColor: #646262;
 
 #navbar-brand {
     background-color: $mainColor;
+    color: $textColor;
     font-size: 30px;
     font-weight: 900;
+    margin-left: 20px;
 }
 
 #nav {
@@ -38,7 +40,7 @@ $mainColor: #646262;
 
 #nav-link {
     background-color: $mainColor;
+    color: $textColor;
     font-size: 20px;
     font-weight: 600;
-    color: $backgroundColor;
 }

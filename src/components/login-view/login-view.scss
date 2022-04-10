@@ -1,6 +1,52 @@
+$backgroundColor: #020402;
+$textColor: #f1fffa;
+$mainColor: #e5383b;
+
+:root {
+    --fontsize-login-card-title: 30px;
+    --fontweight-login-card-title: 600;
+    --fontsize-form-description: 20px;
+    --fontweight-form-description: 400;
+}
+
 * {
     box-sizing: border-box;
     font-family: "League Spartan", sans-serif;
-    background-color: #353535;
-    color: #ffffff;
+}
+
+#login-form {
+    max-width: 500px;
+}
+
+#login-form-label {
+    font-size: var(--fontsize-form-description);
+    font-weight: var(--fontweight-form-description);
+    margin-top: 15px;
+    margin-bottom: 0;
+}
+
+#login-card-title {
+    font-size: var(--fontsize-login-card-title);
+    font-weight: var(--fontweight-login-card-title);
+    text-align: center;
+    color: $mainColor;
+}
+
+#login-card {
+    border-color: $textColor;
+    border-width: 10px;
+    padding: 15px;
+    background-color: $backgroundColor;
+}
+
+#login-button {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: $textColor;
+    background-color: $mainColor;
+    border: none;
+    float: right;
+    margin-top: 25px;
+    font-size: var(--fontsize-form-description);
+    font-weight: var(--fontweight-form-description);
 }

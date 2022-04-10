@@ -19,6 +19,8 @@ $mainColor: #e5383b;
 #card-button {
     margin: auto;
     color: $textColor;
+    font-size: var(--fontsize-card-button);
+    font-weight: var(--fontweight-card-button);
 }
 
 #movie-card {
@@ -32,9 +34,4 @@ $mainColor: #e5383b;
 #card-title {
     font-size: var(--fontsize-card-title);
     font-weight: var(--fontweight-card-title);
-}
-
-#card-button {
-    font-size: var(--fontsize-card-button);
-    font-weight: var(--fontweight-card-button);
 }

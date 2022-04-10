@@ -1,88 +1,4 @@
 :root {
-  --fontsize-card-title: 20px;
-  --fontweight-card-title: 600;
-  --fontsize-card-button: 15px;
-  --fontweight-card-button: 400;
-}
-
-* {
-  box-sizing: border-box;
-  font-family: "League Spartan", sans-serif;
-  background-color: #020402;
-  color: #f1fffa;
-}
-
-#card-button {
-  margin: auto;
-  color: #f1fffa;
-  font-size: var(--fontsize-card-button);
-  font-weight: var(--fontweight-card-button);
-}
-
-#movie-card {
-  text-align: center;
-  min-height: 500px;
-  margin-bottom: 50px;
-  border-color: #f1fffa;
-  border-width: 10px;
-}
-
-#card-title {
-  font-size: var(--fontsize-card-title);
-  font-weight: var(--fontweight-card-title);
-}
-:root {
-  --fontsize-movie-title: 30px;
-  --fontweight-movie-title: 600;
-  --fontsize-movie-description: 20px;
-  --fontweight-movie-description: 400;
-}
-
-* {
-  box-sizing: border-box;
-  font-family: "League Spartan", sans-serif;
-}
-
-#movie-view {
-  border-color: #e5383b;
-  border-width: 10px;
-  min-height: 500px;
-}
-
-#movie-view-image {
-  margin-bottom: 20px;
-}
-
-#movie-title {
-  text-align: center;
-  font-size: var(--fontsize-movie-title);
-  font-weight: var(--fontweight-movie-title);
-}
-
-#movie-description {
-  font-size: var(--fontsize-movie-description);
-  font-weight: var(--fontweight-movie-description);
-}
-
-#movie-director {
-  font-size: var(--fontsize-movie-description);
-  font-weight: var(--fontweight-movie-description);
-}
-
-#movie-genre {
-  font-size: var(--fontsize-movie-description);
-  font-weight: var(--fontweight-movie-description);
-}
-
-#movie-view-button {
-  margin-top: 20px;
-  margin-bottom: 100px;
-  margin-right: 20px;
-  color: #f1fffa;
-  background-color: #e5383b;
-  border: none;
-}
-:root {
   --fontsize-login-card-title: 30px;
   --fontweight-login-card-title: 600;
   --fontsize-form-description: 20px;
@@ -130,27 +46,11 @@
   font-size: var(--fontsize-form-description);
   font-weight: var(--fontweight-form-description);
 }
-:root {
-  --fontsize-button-text: 15px;
-  --fontweight-button-text: 400;
-}
-
 * {
   box-sizing: border-box;
   font-family: "League Spartan", sans-serif;
-  background-color: #020402;
+  background-color: #051a05;
   color: #f1fffa;
-}
-
-#logout-button {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  color: #f1fffa;
-  background-color: #e5383b;
-  border: none;
-  font-size: var(--fontsize-button-text);
-  font-weight: var(--fontweight-button-text);
 }
 :root {
   --fontsize-login-card-title: 30px;
@@ -248,8 +148,7 @@
   font-size: 20px;
   font-weight: 600;
 }
-
 #main-view {
   margin-top: 100px;
 }
-/*# sourceMappingURL=index.3f764291.css.map */
+/*# sourceMappingURL=index.1d334ea1.css.map */

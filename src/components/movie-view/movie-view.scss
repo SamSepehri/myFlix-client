@@ -1,50 +1,55 @@
-.movie-view {
-    width: 550px;
-    height: 800px;
-    overflow: hidden;
-    background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
-    border-radius: 10px;
-    box-shadow: 5px 20px 50px #000;
-    color: white;
+$backgroundColor: #020402;
+$textColor: #f1fffa;
+$mainColor: #e5383b;
+
+:root {
+    --fontsize-movie-title: 30px;
+    --fontweight-movie-title: 600;
+    --fontsize-movie-description: 20px;
+    --fontweight-movie-description: 400;
 }
 
-.movie-title {
-    font-size: 2.3em;
-    justify-content: center;
-    display: flex;
-    margin: 20px;
-    font-weight: bold;
-    padding: 20px;
+* {
+    box-sizing: border-box;
+    font-family: "League Spartan", sans-serif;
+}
+
+#movie-view {
+    border-color: $mainColor;
+    border-width: 10px;
+    min-height: 500px;
+}
+
+#movie-view-image {
+    margin-bottom: 20px;
+}
+
+#movie-title {
     text-align: center;
+    font-size: var(--fontsize-movie-title);
+    font-weight: var(--fontweight-movie-title);
 }
 
-.movie-image {
-    justify-content: center;
-    display: flex;
-    margin-left: 30%;
-    text-align: center;
-    /* padding: 20px; */
-    height: 300px;
-    box-shadow: 5px 20px 50px #000;
+#movie-description {
+    font-size: var(--fontsize-movie-description);
+    font-weight: var(--fontweight-movie-description);
 }
 
-.movie-description {
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-bottom: 20px;
-    padding-top: 30px;
-    font-size: 1em;
-    line-height: 1.5;
-    justify-content: center;
-    display: flex;
-
+#movie-director {
+    font-size: var(--fontsize-movie-description);
+    font-weight: var(--fontweight-movie-description);
 }
 
-.movie-genre {
-    font-weight: bold;
-    padding-top: 0px;
-    padding-left: 30px;
-    padding-bottom: 30px;
+#movie-genre {
+    font-size: var(--fontsize-movie-description);
+    font-weight: var(--fontweight-movie-description);
+}
 
-
+#movie-view-button {
+    margin-top: 20px;
+    margin-bottom: 100px;
+    margin-right: 20px;
+    color: $textColor;
+    background-color: $mainColor;
+    border: none;
 }
