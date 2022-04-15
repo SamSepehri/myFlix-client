@@ -2,23 +2,19 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Form, Button, Card, CardGroup, Container, Col, Row } from 'react-bootstrap';
 import axios from 'axios';
-import './registration-view.scss';
 
+import "./registration-view.scss"
 
-
-// import './login-view.scss';
 export function RegistrationView(props) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
-    const [birthday, setBirthday] = useState('')
+    const [birthday, setBirthday] = useState('');
 
-    // Declare hook for each input
     const [usernameErr, setUsernameErr] = useState('');
     const [passwordErr, setPasswordErr] = useState('');
     const [emailErr, setEmailErr] = useState('');
 
-    // validate user inputs
     const validate = () => {
         let isReq = true;
         if (!username) {
@@ -47,25 +43,27 @@ export function RegistrationView(props) {
     const handleSubmit = (e) => {
         e.preventDefault();
         const isReq = validate();
+
         if (isReq) {
-            /* Send request to the server for authentication */
             axios.post('https://cinesam2022.herokuapp.com/users', {
                 Username: username,
                 Password: password,
-                Email: email,
+                Email: email
             })
                 .then(response => {
                     const data = response.data;
                     console.log(data);
-                    alert('Registration successful, please login!');
+                    alert('Registration successful, please login');
                     window.open('/', '_self');
                 })
                 .catch(response => {
-                    console.error(response);
-                    alert('Unable to register');
+                    console.log(response);
+                    alert('unable to register');
                 });
         }
     };
+
+
 
     return (
         <Container id="registration-form">
@@ -127,6 +125,7 @@ export function RegistrationView(props) {
         </Container>
 
     )
+
 }
 
 RegistrationView.propTypes = {
