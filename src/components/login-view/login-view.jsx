@@ -4,7 +4,9 @@ import { Form, Button, Card, CardGroup, Container, Col, Row } from 'react-bootst
 import { Link } from 'react-router-dom'
 import { connect } from "react-redux";
 import { setUser } from '../../actions/actions';
+
 import "./login-view.scss"
+
 import axios from 'axios';
 
 export function LoginView(props) {
@@ -99,4 +101,7 @@ LoginView.propTypes = {
     }),
     onLoggedIn: PropTypes.func.isRequired
 };
+
+
+
 export default LoginView;
