@@ -3,6 +3,8 @@ import React from "react";
 import axios from "axios";
 import { Col, Row, Container, Button } from "react-bootstrap";
 import "./main-view.scss";
+import { connect } from "react-redux";
+import { setMovies, setUser } from "../../actions/actions";
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import { RegistrationView } from "../registration-view/registration-view";
 import { LoginView } from "../login-view/login-view";
@@ -16,10 +18,8 @@ class MainView extends React.Component {
 
     constructor() {
         super();
-        this.state = {
-            movies: [],
-            user: null
-        };
+
+
     }
 
     // Query cinesam2022 API /movies endpoint to set movies state
@@ -28,14 +28,13 @@ class MainView extends React.Component {
             headers: { Authorization: `Bearer ${token}` }
         })
             .then(response => {
-                this.setState({
-                    movies: response.data
-                });
+                this.props.setMovies(response.data);
             })
             .catch(function (error) {
                 console.log(error);
             });
     }
+
 
     // When token is present (user is logged in), get list of movies
     componentDidMount() {
@@ -54,9 +53,7 @@ class MainView extends React.Component {
     /* On successful login, set token and user variables of local State & load the movies list (getMovies) */
     onLoggedIn(authData) {
         console.log(authData);
-        this.setState({
-            user: authData.user.Username
-        });
+        this.props.setUser(authData.user);
 
         localStorage.setItem('token', authData.token);
         localStorage.setItem('user', authData.user.Username);
@@ -66,25 +63,21 @@ class MainView extends React.Component {
     onLoggedOut() {
         localStorage.removeItem('token');
         localStorage.removeItem('user');
-        this.setState({
-            user: null
-        });
+        this.props.setUser(null);
     }
 
     componentDidMount() {
         let accessToken = localStorage.getItem('token');
         if (accessToken !== null) {
-            this.setState({
-                user: localStorage.getItem('user')
-            });
+            this.props.setUser(localStorage.getItem('user'));
             this.getMovies(accessToken);
         }
     }
 
 
     render() {
-        const { movies, user } = this.state;
-
+        let { movies } = this.props;
+        let { user } = this.props;
         // if (!register) return <RegistrationView onRegistration={(register) => this.onRegistration(register)} />;
 
         return (
@@ -226,4 +219,8 @@ class MainView extends React.Component {
     }
 }
 
-export default MainView;
+let mapStateToProps = state => {
+    return { movies: state.movies, user: state.user }
+}
+
+export default connect(mapStateToProps, { setMovies, setUser })(MainView);
