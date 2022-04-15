@@ -92,15 +92,22 @@ class MainView extends React.Component {
                 <Row className="main-view justify-content-md-center">
 
                     <Route exact path="/" render={() => {
-                        if (!user) {
-                            return <Redirect to="/login" />;
-                        }
+                        if (!user) return <Col>
+                            <LoginView onLoggedIn={user => this.onLoggendin(user)} />
+                        </Col>
 
+                        if (movies.length === 0) return <div className="main-view" />;
+                        return <MoviesList movies={movies} />;
+
+                        /* if (!user) {
+                            return <Redirect to="/login" />;
+                        } 
+                        
                         return movies.map(m => (
                             <Col md={4} key={m._id}>
                                 <MovieCard movie={m} />
                             </Col>
-                        ))
+                        )) */
                     }} />
 
                     <Route exact path="/login" render={() => {
@@ -214,6 +221,8 @@ class MainView extends React.Component {
                         </Col>
                     }} />
                 </Row>
+
+
             </Router>
         );
     }
