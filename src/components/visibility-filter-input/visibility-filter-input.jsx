@@ -1,8 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import { Form, FormControl } from "react-bootstrap";
-
+import Form from "react-bootstrap";
+import { FormControl } from "react-bootstrap";
 import { setFilter } from "../../actions/actions";
 
 function VisibilityFilterInput(props) {

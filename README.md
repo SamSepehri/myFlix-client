@@ -20,6 +20,14 @@ personal information, and create a list of their favorite movies. it`s based on 
 
 - React.js
 - Sass
+- Javascript
+- React
+- React-Redux
+- Parcel
+- React-Bootstrap
+- Redux
+- HTML
+- CSS
 
 ## Features
 

@@ -48,7 +48,9 @@ export function RegistrationView(props) {
             axios.post('https://cinesam2022.herokuapp.com/users', {
                 Username: username,
                 Password: password,
-                Email: email
+                Email: email,
+                Birthday: birthday
+
             })
                 .then(response => {
                     const data = response.data;

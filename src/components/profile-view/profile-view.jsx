@@ -1,6 +1,7 @@
 import React from "react";
 import "./profile-view.scss";
 import PropTypes from "prop-types";
+import { Link } from 'react-router-dom';
 import { setUser } from "../../actions/actions";
 
 import { connect } from "react-redux";
