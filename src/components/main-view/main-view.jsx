@@ -1,12 +1,15 @@
 // myFlix-client/src/main-view/main-view.jsx
 import React from "react";
 import axios from "axios";
+import { connect } from 'react-redux';
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
+import { setMovies, setUser } from '../../actions/actions';
+import MoviesList from '../movies-list/movies-list';
 import { Col, Row, Container, Button } from "react-bootstrap";
 import "./main-view.scss";
-import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import { RegistrationView } from "../registration-view/registration-view";
 import { LoginView } from "../login-view/login-view";
-import { MovieCard } from "../movie-card/movie-card";
+// import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
 import { DirectorView } from "../director-view/director-view";
 import { ProfileView } from "../profile-view/profile-view";
@@ -17,7 +20,6 @@ class MainView extends React.Component {
     constructor() {
         super();
         this.state = {
-            movies: [],
             user: null
         };
     }
@@ -28,9 +30,7 @@ class MainView extends React.Component {
             headers: { Authorization: `Bearer ${token}` }
         })
             .then(response => {
-                this.setState({
-                    movies: response.data
-                });
+                this.props.setMovies(response.data);
             })
             .catch(function (error) {
                 console.log(error);
@@ -83,7 +83,8 @@ class MainView extends React.Component {
 
 
     render() {
-        const { movies, user } = this.state;
+        let { movies } = this.props;
+        let { user } = this.state;
 
         // if (!register) return <RegistrationView onRegistration={(register) => this.onRegistration(register)} />;
 
@@ -226,4 +227,8 @@ class MainView extends React.Component {
     }
 }
 
-export default MainView;
+let mapStateToProps = state => {
+    return { movies: state.movies }
+}
+
+export default connect(mapStateToProps, { setMovies })(MainView);
