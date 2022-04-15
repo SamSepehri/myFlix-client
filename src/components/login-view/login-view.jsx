@@ -3,12 +3,14 @@ import PropTypes from 'prop-types';
 import { Form, Button, Card, CardGroup, Container, Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom'
 import { connect } from "react-redux";
-import { setUser } from '../../actions/actions';
-
 import "./login-view.scss"
-
 import axios from 'axios';
 
+const mapStateToProps = (state) => {
+    return {
+        user: state.user,
+    }
+}
 export function LoginView(props) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -46,11 +48,11 @@ export function LoginView(props) {
                 Password: password
             })
                 .then(response => {
-                    const data = response.data;
-                    props.onLoggedIn(data);
+                    onLoggedIn(response.data);
                 })
                 .catch(e => {
-                    console.log('no such user')
+                    alert('User does not exist.');
+                    console.log('User does not exist.');
                 });
         }
     };
