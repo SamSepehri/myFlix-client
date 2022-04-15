@@ -3,6 +3,11 @@ import React from "react";
 import axios from "axios";
 import { Col, Row, Container, Button } from "react-bootstrap";
 import "./main-view.scss";
+
+import { connect } from "react-redux";
+import { setMovies, setUser } from "../../actions/actions";
+import MoviesList from '../movies-list/movies-list';
+
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import { RegistrationView } from "../registration-view/registration-view";
 import { LoginView } from "../login-view/login-view";
