@@ -22,15 +22,7 @@
     "react": "^18.0.0",
     "react-bootstrap": "^2.2.3",
     "react-dom": "^18.0.0",
-<<<<<<< Updated upstream
-    "react-router-dom": "^5.3.0",
-    "redux": "^4.1.2"
-=======
-    "react-redux": "^7.2.8",
-    "react-router-dom": "^5.3.0",
-    "redux": "^4.1.2",
-    "redux-devtools-extension": "^2.13.9"
->>>>>>> Stashed changes
+    "react-router-dom": "^5.3.0"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.0.0-rc.0"
