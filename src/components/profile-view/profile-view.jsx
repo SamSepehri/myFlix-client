@@ -1,6 +1,12 @@
 import React from "react";
+
 import "./profile-view.scss";
 import PropTypes from "prop-types";
+
+import { setUser } from "../../actions/actions";
+
+import { connect } from "react-redux";
+
 import { Container, Card, Button, Row, Col, Form, FormGroup, FormControl } from "react-bootstrap";
 import axios from "axios";
 
@@ -34,7 +40,7 @@ export class ProfileView extends React.Component {
     getUser(token) {
         const Username = localStorage.getItem('user');
 
-        axios.get(`https://movieanorak.herokuapp.com/users/${Username}`, {
+        axios.get(`https://cinesam2022.herokuapp.com/users/${Username}`, {
             headers: { Authorization: `Bearer ${token}` }
         })
             .then(response => {
@@ -56,7 +62,7 @@ export class ProfileView extends React.Component {
         const Username = localStorage.getItem('user');
         const token = localStorage.getItem('token');
 
-        axios.put(`https://movieanorak.herokuapp.com/users/${Username}`,
+        axios.put(`https://cinesam2022.herokuapp.com/users/${Username}`,
             {
                 Username: this.state.Username,
                 Password: this.state.Password,
@@ -81,12 +87,12 @@ export class ProfileView extends React.Component {
             });
     };
 
-    onRemoveFavorite = (e, movies) => {
+    onRemoveFavorite = (e, movie) => {
         e.preventDefault();
         const Username = localStorage.getItem('user');
         const token = localStorage.getItem('token');
 
-        axios.delete(`https://movieanorak.herokuapp.com/users/${Username}/movies/${movie._id}`,
+        axios.delete(`https://cinesam2022.herokuapp.com/users/${Username}/movies/${movie._id}`,
             {
                 headers: { Authorization: `Bearer ${token}` }
             }
@@ -105,7 +111,7 @@ export class ProfileView extends React.Component {
         const Username = localStorage.getItem('user');
         const token = localStorage.getItem('token');
 
-        axios.delete(`https://movieanorak.herokuapp.com/users/${Username}`, {
+        axios.delete(`https://cinesam2022.herokuapp.com/users/${Username}`, {
             headers: { Authorization: `Bearer ${token}` }
         })
             .then((response) => {
@@ -282,3 +288,9 @@ ProfileView.propTypes = {
     })).isRequired,
     onBackClick: PropTypes.func.isRequired
 };
+
+let mapStateToProps = state => {
+    return { movies: state.movies, user: state.user }
+}
+
+export default connect(mapStateToProps, { setUser })(ProfileView);
