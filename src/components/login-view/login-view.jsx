@@ -37,15 +37,14 @@ export function LoginView(props) {
     const handleSubmit = (e) => {
         e.preventDefault();
         const isReq = validate();
-
         if (isReq) {
+            /* Send a request to the server for authentication */
             axios.post('https://cinesam2022.herokuapp.com/login', {
                 Username: username,
                 Password: password
             })
                 .then(response => {
                     const data = response.data;
-                    //username has been changed to data
                     props.onLoggedIn(data);
                 })
                 .catch(e => {
@@ -53,7 +52,6 @@ export function LoginView(props) {
                 });
         }
     };
-
 
     return (
         <Container id="login-form">
@@ -94,7 +92,6 @@ export function LoginView(props) {
     );
 }
 
-
 LoginView.propTypes = {
     user: PropTypes.shape({
         Username: PropTypes.string.isRequired,
@@ -102,3 +99,4 @@ LoginView.propTypes = {
     }),
     onLoggedIn: PropTypes.func.isRequired
 };
+export default LoginView;
