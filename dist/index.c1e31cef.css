@@ -201,7 +201,6 @@
   font-size: var(--fontsize-card-title);
   font-weight: var(--fontweight-card-title);
 }
-
 :root {
   --fontsize-login-card-title: 30px;
   --fontweight-login-card-title: 600;
