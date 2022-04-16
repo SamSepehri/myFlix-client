@@ -72,6 +72,7 @@ class MainView extends React.Component {
         let { user } = this.state;
         return (
             <Router>
+                <Button id="logout-button" onClick={() => { this.onLoggedOut() }}>Logout</Button>
                 <Row>
                     <NavbarView user={user} />
                 </Row>
@@ -181,7 +182,6 @@ class MainView extends React.Component {
                             </Col>
                         }} />
                 </Row>
-                <Button id="logout-button" onClick={() => { this.onLoggedOut() }}>Logout</Button>
             </Router>
         );
     }

@@ -44,22 +44,22 @@ export class MovieCard extends React.Component {
         const { movie, onAddFavorite } = this.props;
 
         return (
-            <Container>
-                <CardGroup>
-                    <Card id="movie-card">
-                        <Card.Img variant="top" src={movie.ImagePath} />
-                        <Card.Body>
-                            <Card.Title id="card-title">{movie.Title}</Card.Title>
-                            <Link to={`/movies/${movie._id}`}>
-                                <Button id="card-button" variant="link">Show more</Button>
-                            </Link>
-                        </Card.Body>
-                        <Card.Footer className="text-center">
-                            <Button variant="primary" value={movie._id} onClick={() => this.onAddFavorite(movie)}>Add to Favorite</Button>
-                        </Card.Footer>
-                    </Card>
-                </CardGroup>
-            </Container>
+
+
+            <Card id="movie-card">
+                <Card.Img variant="top" src={movie.ImagePath} />
+                <Card.Body>
+                    <Card.Title id="card-title">{movie.Title}</Card.Title>
+                    <Link to={`/movies/${movie._id}`}>
+                        <Button id="card-button" variant="link">Show more</Button>
+                    </Link>
+                </Card.Body>
+                <Card.Footer className="text-center">
+                    <Button variant="primary" value={movie._id} onClick={() => this.onAddFavorite(movie)}>Add to Favorite</Button>
+                </Card.Footer>
+            </Card>
+
+
         )
     };
 }
