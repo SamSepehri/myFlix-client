@@ -1,7 +1,8 @@
 {
   "name": "myflix-client",
   "version": "1.0.0",
-  "description": "Movie Database",
+  "description": "client for myflix app",
+  "default": "src/index.html",
   "scripts": {
     "start": "parcel src/index.html",
     "build": "parcel build src/index.html",
