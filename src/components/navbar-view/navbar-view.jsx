@@ -1,7 +1,5 @@
 import React from "react";
 import './navbar-view.scss';
-import { Link } from 'react-router-dom';
-
 
 import { Navbar, Container, Nav, Button, Form } from 'react-bootstrap';
 

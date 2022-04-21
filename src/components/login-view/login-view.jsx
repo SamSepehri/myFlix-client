@@ -3,14 +3,13 @@ import PropTypes from 'prop-types';
 import { Form, Button, Card, CardGroup, Container, Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom'
 import { connect } from "react-redux";
+
+import { setUser } from '../../actions/actions';
+
 import "./login-view.scss"
+
 import axios from 'axios';
 
-const mapStateToProps = (state) => {
-    return {
-        user: state.user,
-    }
-}
 export function LoginView(props) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -42,17 +41,19 @@ export function LoginView(props) {
         e.preventDefault();
         const isReq = validate();
         if (isReq) {
-            /* Send a request to the server for authentication */
-            axios.post('https://cinesam2022.herokuapp.com/login', {
-                Username: username,
-                Password: password
-            })
-                .then(response => {
-                    onLoggedIn(response.data);
+            axios
+                .post("https://cinesam2022.herokuapp.com/login", {
+                    Username: username,
+                    Password: password,
                 })
-                .catch(e => {
-                    alert('User does not exist.');
-                    console.log('User does not exist.');
+                .then((response) => {
+                    const data = response.data;
+                    console.log(data)
+                    props.onLoggedIn(data);
+
+                })
+                .catch((error) => {
+                    console.log("Error:", error);
                 });
         }
     };
